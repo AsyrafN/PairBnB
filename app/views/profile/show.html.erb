@@ -1,0 +1,18 @@
+Hi <%= current_user.first_name %>
+
+<div class="text-center">
+  <img src="@user.avatar_url" class="rounded img-circle" alt="default">
+</div>
+
+<%= form_with scope: :profile, url: profile_path, method: :post, html: { multipart: true } do |f| %>
+  <p>
+    
+    <%= image_tag(@user.avatar_url) if @user.avatar? %>
+    <%= f.file_field :avatar %>
+    <%= f.hidden_field :avatar_cache %>
+  </p>
+  
+  <div class="actions">
+	    <%= f.submit 'upload photo' %>
+	</div>
+<% end %>
