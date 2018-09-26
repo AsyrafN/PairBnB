@@ -82,3 +82,5 @@ gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
 gem 'country_select', '~> 3.1'
 
 gem 'carrierwave', '~> 1.0'
+
+gem "braintree", "~> 2.90.0"

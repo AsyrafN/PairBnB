@@ -1,5 +1,7 @@
 class Listing < ApplicationRecord
 	belongs_to :user
+	has_many :avatars
+	has_many :reservations
 
 	def self.place_type
 		['Apartment', 'House', 'Secondary Unit', 'Unique Space', 'Bed And Breakfast', 'Boutique Hotel']
