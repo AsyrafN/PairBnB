@@ -84,3 +84,7 @@ gem 'country_select', '~> 3.1'
 gem 'carrierwave', '~> 1.0'
 
 gem "braintree", "~> 2.90.0"
+
+gem "letter_opener", :group => :development
+
+gem "sidekiq"
