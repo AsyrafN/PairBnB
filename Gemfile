@@ -92,3 +92,5 @@ gem "sidekiq"
 gem 'pg_search'
 
 gem 'kaminari'
+
+gem 'rails_12factor', group: :production
