@@ -9,6 +9,7 @@ class ListingsController < ApplicationController
     @listing = Listing.all
   end
 
+
   # GET /listings/1
   # GET /listings/1.json
   def show

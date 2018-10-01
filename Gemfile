@@ -88,3 +88,7 @@ gem "braintree", "~> 2.90.0"
 gem "letter_opener", :group => :development
 
 gem "sidekiq"
+
+gem 'pg_search'
+
+gem 'kaminari'
