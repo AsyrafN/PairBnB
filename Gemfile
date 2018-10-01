@@ -82,3 +82,15 @@ gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
 gem 'country_select', '~> 3.1'
 
 gem 'carrierwave', '~> 1.0'
+
+gem "braintree", "~> 2.90.0"
+
+gem "letter_opener", :group => :development
+
+gem "sidekiq"
+
+gem 'pg_search'
+
+gem 'kaminari'
+
+gem 'rails_12factor', group: :production

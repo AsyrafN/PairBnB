@@ -3,21 +3,12 @@ class ListingsController < ApplicationController
 
   # GET /listings
   # GET /listings.json
-def selector
-  listing_details = Listing.property_type
-
-  @listing = Listing.find(params[:id])
-    respond_to do |format|
-      
-      format.json { 
-        render json: @listing
-      }
-    end
-end
+  # 
 
   def index
-    @listings = Listing.all
+    @listing = Listing.all
   end
+
 
   # GET /listings/1
   # GET /listings/1.json

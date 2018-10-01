@@ -1,1 +1,31 @@
-hey
+<%= stylesheet_link_tag 'welcome' %>
+
+<%= form_tag("/listings", method: "get") do %>
+  <%= text_field_tag(:search) %>
+  <%= submit_tag("Search") %>
+<% end %> 
+
+<p>Welcome <%= current_user.first_name %></p>
+
+<div class="card-group">
+	<% @listing.each do |l| %>
+  	<div class="card">
+	    <%= image_tag get_random_image, class:"card-img-top" %>
+		    <div class="card-body">
+		    <div>
+		    <i class="fas fa-bath"></i>Chode: <%= l.bathroom_number %>
+		    <i class="fas fa-bed"></i><%= l.bedroom_number %>
+		    <i class="fas fa-user"></i><%= l.guest_number %>
+		    </div>
+		      <h5 class="card-title"><p>Type: <%= l.property_type %></p></h5>
+		      <p class="card-text"><p>RM: <%= l.price %></p>
+		      <p class="card-text"><%= l.description %></p>
+		    </div>
+	    <div class="card-footer">
+	      <small class="text-muted">Last updated 3 mins ago</small>
+	      <a href="/listings/<%=l.id %>" class="btn btn-primary d-flex flex-column">view Listing</a>
+	    </div>
+    </div>
+	<% end %>
+</div>
+  

@@ -65,3 +65,25 @@
  body.homepage #navigation-bottom {
    display: none !important;
  }
+
+ .card {
+        margin: 50px; /* Added */
+        float: none; /* Added */
+        margin-bottom: 10px; /* Added */
+        margin: 40px;
+		height: 60%;
+}
+
+/*body {
+  padding-top: 5rem;
+}
+.starter-template {
+  padding: 3rem 1.5rem;
+  text-align: center;
+}
+*/
+
+.card-img-top {
+	height: 300px;
+}
+
