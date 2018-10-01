@@ -60,3 +60,25 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+gem "clearance"
+
+gem 'bootstrap', '~> 4.1.3'
+
+gem "bootstrap_form", ">= 4.0.0.alpha1"
+
+gem 'sprockets-rails', :require => 'sprockets/railtie'
+
+gem 'jquery-rails'
+
+gem 'omniauth-google-oauth2'
+
+gem 'omniauth'
+
+gem "figaro"
+
+gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
+
+gem 'country_select', '~> 3.1'
+
+gem 'carrierwave', '~> 1.0'

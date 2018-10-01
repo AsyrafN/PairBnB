@@ -1,0 +1,14 @@
+Hi <%= current_user.first_name %>
+
+
+<%= form_with scope: :user, url: user_path(current_user), method: :patch, html: { multipart: true } do |f| %>
+  <p>
+    <%= image_tag(@user.avatar_url) if @user.avatar? %>
+    <%= f.file_field :avatar %>
+    <%= f.hidden_field :avatar_cache %>
+  </p>
+  
+  <div class="actions">
+	    <%= f.submit 'upload photo' %>
+	</div>
+<% end %>

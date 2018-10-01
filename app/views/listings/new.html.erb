@@ -1,0 +1,143 @@
+<%= stylesheet_link_tag 'listings' %>
+
+<h1>New Listing</h1>
+
+
+ <%= bootstrap_form_with scope: :listing, url: listings_path, method: :post, local: true do |f| %>
+
+	<%= f.select :place_type, options_for_select(Listing.place_type), include_blank: true %><br>
+
+	
+	<div id="apartment_list" class="d-none hidden-list">
+		<%= f.select :property_type, options_for_select(Listing.apartment) %>
+	</div>
+	<div id="house_list" class="d-none hidden-list">
+		<%= f.select :property_type, options_for_select(Listing.house) %>
+	</div>
+	<div id="secondary_unit_list" class="d-none hidden-list">
+		<%= f.select :property_type, options_for_select(Listing.secondary_unit) %>
+	</div>
+	<div id="unique_space_list" class="d-none hidden-list">
+		<%= f.select :property_type, options_for_select(Listing.unique_space) %>
+	</div>
+	<div id="bed_and_breakfast_list" class="d-none hidden-list">
+		<%= f.select :property_type, options_for_select(Listing.bed_and_breakfast) %>
+	</div>
+	<div id="boutique_hotel_list" class="d-none hidden-list">
+		<%= f.select :property_type, options_for_select(Listing.boutique_hotel) %>
+	</div>
+
+		<%= f.select :guest_number, options_for_select(Listing.guest_number)  %>
+
+		<%= f.select :bedroom_number, options_for_select(Listing.bedroom_number)  %>
+
+		<%= f.select :bed_number, options_for_select(Listing.bed_number)  %>
+
+		<%= f.select :bathroom_number, options_for_select(Listing.bathroom_number)  %>
+
+		Country: 
+	  	<%= f.country_select :country %>
+  
+
+  	<div class="text-field">
+  		<%= f.text_field :address %>
+	</div>
+	<div class="text-field">
+  		<%= f.text_field :city %>
+	</div>
+	<div class="text-field">
+  		<%= f.text_field :state %>
+	</div>
+	<div class="text-field">
+  		<%= f.text_field :zipcode %>
+	</div>
+	<div class="text-field">
+  		<%= f.text_field :Price %>
+	</div>
+	<div class="text-field">
+  		<%= f.text_field :Description %>
+	</div>
+	
+	<div class="actions">
+	    <%= f.submit 'Create Listing' %>
+	</div>
+<% end -%>
+<%= render 'form', listing: @listing %>
+
+<%= link_to 'Back', listings_path %>
+
+
+<script>
+
+let change_details = function(){
+ 	var selected = $(':selected', this); 
+ 	console.log(selected)
+ 	console.log(selected[0])
+ 	console.log(selected[0].label)
+ 	console.log($(".hidden-list"))
+ 	if (selected[0].label == "Apartment"){
+ 		$(".hidden-list").addClass("d-none")
+ 		$('#apartment_list').removeClass("d-none")
+
+ 		// $("#house_list, #secondary_unit_list, #unique_space_list, #bed_and_breakfast_list, #boutique_hotel_list").remove()
+
+ 		
+
+ 	}else if(selected[0].label == "House"){
+
+ 		// $("#apartment_list, #secondary_unit_list, #unique_space_list, #bed_and_breakfast_list, #boutique_hotel_list").remove()
+
+ 		// $(".hidden-list").removeClass("d-none")
+ 		$(".hidden-list").addClass("d-none")
+ 		$('#house_list').removeClass("d-none")
+ 
+
+ 	}else if(selected[0].label == "Secondary Unit"){
+
+ 		$(".hidden-list").addClass("d-none")
+ 		$('#secondary_unit_list').removeClass("d-none")
+
+ 		// $("#apartment_list, #house_list, #unique_space_list, #bed_and_breakfast_list, #boutique_hotel_list").remove()
+
+ 		// $(".hidden-list").removeClass("d-none")
+
+ 	}else if(selected[0].label == "Unique Space"){
+
+ 		$(".hidden-list").addClass("d-none")
+ 		$('#unique_space_list').removeClass("d-none")
+
+ 		// $("#apartment_list, #house_list, #secondary_unit_list, #bed_and_breakfast_list, #boutique_hotel_list").remove()
+
+ 		// $(".hidden-list").removeClass("d-none")
+
+ 	}else if(selected[0].label == "Bed And Breakfast"){
+
+ 		$(".hidden-list").addClass("d-none")
+ 		$('#bed_and_breakfast_list').removeClass("d-none")
+
+ 		// $("#apartment_list, #house_list, #secondary_unit_list, #unique_space_list, #boutique_hotel_list").remove()
+
+ 		// $(".hidden-list").removeClass("d-none")
+
+ 	}else if(selected[0].label == "Boutique Hotel"){
+
+ 		$(".hidden-list").addClass("d-none")
+ 		$('#boutique_hotel_list').removeClass("d-none")
+
+ 		// $("#apartment_list, #house_list, #secondary_unit_list, #unique_space_list, #bed_and_breakfast_list").remove()
+
+ 		// $(".hidden-list").removeClass("d-none")
+
+ 	}}
+
+ $('#listing_place_type').change(change_details)
+
+
+
+
+
+
+</script>
+
+
+

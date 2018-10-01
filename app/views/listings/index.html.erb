@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listings</h1>
+<div class="d-flex flex-wrap">
+<% @listings.each do |l| %>
+  <div class="card" style="width: 18rem;">
+    <img class="card-img-top" src="http://cdn2.tstatic.net/default.jpg" alt="Card image cap">
+    <div class="card-body">
+       <tbody>
+        <tr>
+          <p>Number of guest: <td><%= l.guest_number %></td></p>
+          <p>Bedroom number: <td><%= l.bedroom_number %></td></p>
+          <p>Bathroom number: <td><%= l.bathroom_number %></td></p><br>
+        </tr>
+        </tbody>
+      <p class="card-text"><%= l.description %></p>
+      <a href="/listings/<%=l.id %>" class="btn btn-primary d-flex flex-column">view Listing</a>
+    </div>
+  </div>
+<% end %>
+</div>
+
+
+
+ 
+
+
+
+
+<%= link_to 'New Listing', new_listing_path %>
+
+
